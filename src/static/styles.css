@@ -16,16 +16,42 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
-  padding: 20px 0;
+  padding: 28px 20px 20px;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
 }
 
+.header-copy {
+  padding-top: 20px;
+}
+
 header h1 {
   margin-bottom: 10px;
+}
+
+.auth-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.auth-controls button {
+  background-color: white;
+  color: #1a237e;
+  padding: 7px 10px;
+}
+
+#teacher-status {
+  max-width: 210px;
+  overflow-wrap: anywhere;
 }
 
 main {
@@ -125,6 +151,58 @@ section h3 {
   background-color: #ffebee;
 }
 
+#teacher-prompt {
+  color: #555;
+  margin-bottom: 12px;
+}
+
+dialog {
+  width: min(420px, calc(100% - 32px));
+  margin: auto;
+  padding: 24px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+  background: rgba(15, 18, 38, 0.55);
+}
+
+dialog form {
+  display: grid;
+  gap: 12px;
+}
+
+dialog h2 {
+  color: #1a237e;
+  margin-bottom: 4px;
+}
+
+dialog label {
+  font-weight: bold;
+}
+
+dialog input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.secondary-button {
+  background: #e8eaf6;
+  color: #1a237e;
+}
+
 .participants-section p {
   color: #777;
   font-style: italic;
@@ -190,6 +268,27 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding-top: 42px;
+  }
+
+  .header-copy {
+    padding-top: 18px;
+  }
+
+  .auth-controls {
+    top: 8px;
+    right: 8px;
+    left: 8px;
+    justify-content: flex-end;
+  }
+
+  #teacher-status {
+    max-width: 150px;
+  }
 }
 
 footer {
